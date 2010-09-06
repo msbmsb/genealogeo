@@ -19,7 +19,18 @@
       <artifactId>commons-cli</artifactId>
       <version>1.2</version>
     </dependency>
+    <dependency>
+      <groupId>com.msbmsb.genealoj</groupId>
+      <artifactId>genealoj</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
+  <repositories>
+    <repository>
+      <id>msbmsb-snapshots</id>
+      <url>http://github.com/msbmsb/msbmsb-mvn-repo/raw/master/snapshots</url>
+    </repository>
+  </repositories>
   <build>
     <plugins>
       <plugin>
