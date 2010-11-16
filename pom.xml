@@ -24,6 +24,11 @@
       <artifactId>genealoj</artifactId>
       <version>0.1-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>com.msbmsb.gogogeocode</groupId>
+      <artifactId>gogogeocode</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
   <repositories>
     <repository>
