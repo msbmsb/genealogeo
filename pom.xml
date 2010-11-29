@@ -33,7 +33,7 @@
   <repositories>
     <repository>
       <id>msbmsb-snapshots</id>
-      <url>http://github.com/msbmsb/msbmsb-mvn-repo/raw/master/snapshots</url>
+      <url>https://github.com/msbmsb/msbmsb-mvn-repo/raw/master/snapshots</url>
     </repository>
   </repositories>
   <build>
