@@ -6,7 +6,9 @@
   <packaging>jar</packaging>
   <version>0.1-SNAPSHOT</version>
   <name>genealogeo</name>
-  <url>http://maven.apache.org</url>
+  <description>Genealogy mapping: GEDCOM to KML convertor</description>
+  <url>https://github.com/msbmsb/genealogeo</url>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -30,12 +32,16 @@
       <version>0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
-  <repositories>
+  <distributionManagement>
     <repository>
-      <id>msbmsb-snapshots</id>
-      <url>https://github.com/msbmsb/msbmsb-mvn-repo/raw/master/snapshots</url>
+      <id>repo</id>
+      <url>https://github.com/msbmsb/msbmsb-mvn-repo/raw/master/releases</url>
     </repository>
-  </repositories>
+    <snapshotRepository>
+      <id>snapshot-repo</id>
+      <url>https://github.com/msbmsb/msbmsb-mvn-repo/raw/master/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement >
   <build>
     <plugins>
       <plugin>
