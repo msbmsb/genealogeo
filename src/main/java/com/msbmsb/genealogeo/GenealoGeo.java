@@ -10,6 +10,7 @@
 package com.msbmsb.genealogeo;
 
 import com.msbmsb.genealoj.*;
+import com.msbmsb.gogogeocode.*;
 
 import java.io.File;
 import java.util.List;
@@ -66,6 +67,8 @@ public class GenealoGeo {
     // load gedcom family nodes directly
     List<GedcomNode> families = gedcomParser.getNodes(Utils.FAMILY_TAG);
 
+    if(families == null) return;
+
     for(GedcomNode f : families) {
       System.out.println("Family: " + f);
     }
@@ -78,6 +81,26 @@ public class GenealoGeo {
     if(gedcomParser == null) {
       System.out.println("Error: No Genealogy file loaded.");
       return;
+    }
+
+    // load gedcom place nodes directly
+    List<GedcomNode> families = gedcomParser.getNodes(Utils.INDIVIDUAL_TAG);
+
+    if(families == null) return;
+
+    for(GedcomNode f : families) {
+      List<GedcomNode> births = f.getChildrenWithTag("BIRT");
+      if(births == null) continue;
+      for(GedcomNode b : births) {
+        List<GedcomNode> locations = b.getChildrenWithTag("PLAC");
+  
+        if(locations == null) continue;
+  
+        for(GedcomNode l : locations) {
+          System.out.println("Location: " + l);
+          System.out.println(GoGoGeocode.geocodeToString(l.data()));
+        }
+      }
     }
   }
 }
