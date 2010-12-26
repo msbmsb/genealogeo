@@ -9,6 +9,7 @@
 
 package com.msbmsb.genealogeo.kml;
 
+import com.msbmsb.genealogeo.kml.*;
 import com.msbmsb.genealoj.*;
 import com.msbmsb.gogogeocode.*;
 
@@ -18,15 +19,16 @@ import de.micromata.opengis.kml.v_2_2_0.Icon;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 import de.micromata.opengis.kml.v_2_2_0.Style;
+import de.micromata.opengis.kml.v_2_2_0.LineStyle;
 
 import java.io.File;
 import java.util.List;
 
 public class KmlBuilder {
-  public Kml m_kml;
-  public Document m_doc;
-  public Folder m_folder;
-  public Style m_defaultStyle;
+  private Kml m_kml;
+  private Document m_doc;
+  private Folder m_folder;
+  private Style m_defaultStyle;
 
   public KmlBuilder(String kmlName) {
     m_kml = new Kml();
@@ -36,6 +38,9 @@ public class KmlBuilder {
     m_defaultStyle.withId("style_default")
       .createAndSetIconStyle().withScale(10.0);
     m_defaultStyle.createAndSetLabelStyle().withColor("000000").withScale(10.0);
+    m_defaultStyle.createAndSetLineStyle()
+      .withColor("760000ff")
+      .withWidth(3.0d);
   }
 
   public void addAndLink(IndividualNode curr) {
