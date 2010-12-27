@@ -13,6 +13,7 @@
 1 NAME Jerry /Seinfeld/
 1 SEX M
 1 FAMS @F1@
+1 FAMC @F2@
 0 @P-499082360@ INDI 
 1 BIRT 
 2 PLAC Albany, NY
@@ -24,11 +25,31 @@
 2 PLAC New York, NY
 1 NAME Jimmy /Seinfeld/
 1 SEX M
-1 FAMS @F1@
+1 FAMC @F1@
+0 @P-499082350@ INDI 
+1 BIRT 
+2 PLAC Chicago, IL
+1 DEAT
+2 PLAC Springfield, IL
+1 NAME Steven /Seinfeld/
+1 SEX M
+1 FAMS @F2@
+0 @P-499082355@ INDI 
+1 BIRT 
+2 PLAC Miami, FL
+1 NAME Alice /Seinflod/
+1 SEX M
+1 FAMS @F2@
 0 @F1@ FAM 
 1 HUSB @P-499082364@
 1 WIFE @P-499082360@
 1 CHIL @P-499082365@
+2 _FREL Natural
+2 _MREL Natural
+0 @F1@ FAM 
+1 HUSB @P-499082350@
+1 WIFE @P-499082355@
+1 CHIL @P-499082364@
 2 _FREL Natural
 2 _MREL Natural
 0 TRLR

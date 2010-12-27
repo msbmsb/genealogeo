@@ -63,13 +63,22 @@ public class GenealoGeoTest
         genealoGeo.load(testFile);
         System.out.println("Output: ");
         genealoGeo.printFamilies();
-        genealoGeo.printLocations();
+//         genealoGeo.printLocations();
 
         // generate kml
         KmlBuilder kmlBuilder = new KmlBuilder("ggExample1");
-        generateKml(kmlBuilder, genealoGeo);
+        generateKmlOfFullTree(kmlBuilder, genealoGeo);
         
         assert(true);
+    }
+
+    public void generateKmlOfFullTree(KmlBuilder kmlBuilder, GenealoGeo genealoGeo) {
+      List<IndividualNode> indivs = genealoGeo.gedcomParser.getIndividuals();
+      for(IndividualNode i : indivs) {
+        kmlBuilder.placeIndividual(i);
+      }
+      kmlBuilder.linkFamilies(genealoGeo.gedcomParser.getNodes(Utils.FAMILY_TAG));
+      kmlBuilder.marshal("test.kml");
     }
 
     public void generateKml(KmlBuilder kmlBuilder, GenealoGeo genealoGeo)
